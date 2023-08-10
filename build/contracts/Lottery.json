@@ -23,7 +23,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -36,7 +37,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -49,7 +51,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -68,7 +71,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -81,7 +85,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -94,14 +99,16 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
       "name": "enter",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
@@ -114,7 +121,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -140,7 +148,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"enter\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPlayers\",\"outputs\":[{\"internalType\":\"address payable[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRandomNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"lottery\",\"type\":\"uint256\"}],\"name\":\"getWinnerByLottery\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"lotteryHistory\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lotteryId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pickWinner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"players\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"A simple decentralized lottery smart contract.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"Constructor initializes the contract with the contract owner and sets the initial lottery ID.\"},\"enter()\":{\"details\":\"Enter the lottery by sending a minimum value of 0.01 ether.\"},\"getBalance()\":{\"details\":\"Get the balance of the contract in ether.\",\"returns\":{\"_0\":\"The balance of the contract.\"}},\"getPlayers()\":{\"details\":\"Get the list of players who entered the current lottery.\",\"returns\":{\"_0\":\"An array of addresses representing the players.\"}},\"getRandomNumber()\":{\"details\":\"Generate a pseudo-random number based on the owner's address and current timestamp.\",\"returns\":{\"_0\":\"A pseudo-random number.\"}},\"getWinnerByLottery(uint256)\":{\"details\":\"Get the winner's address for a specific lottery ID.\",\"params\":{\"lottery\":\"The lottery ID to query.\"},\"returns\":{\"_0\":\"The winner's address for the given lottery.\"}},\"pickWinner()\":{\"details\":\"Pick a winner from the list of players and transfer the contract's balance to them. Only the contract owner can call this function.\"}},\"title\":\"Lottery\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Lottery.sol\":\"Lottery\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Lottery.sol\":{\"keccak256\":\"0xdd56f3cd410f9e1662996ec03f760944b4f48882ead6eeb8988b3ff7aba31752\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0e2a9057f683bd7235ebdcc7f068b74a40429bb521f1ed2fcb0a8f7fdba913f\",\"dweb:/ipfs/Qmb4XwzC9kpnEwQiMJ7dyaCQJprhDxbC1GiDpKGTEPZwWn\"]}},\"version\":1}",
@@ -6164,9 +6173,17 @@
     "name": "solc",
     "version": "0.8.11+commit.d7f03943.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x336BDc110f0180E812558a9f0b43c6A5F4C722CB",
+      "transactionHash": "0x23c795269673fd40d07cc075a16357cd9e04e9f8b2ad0cf8ca89419e300d314a"
+    }
+  },
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-08-10T02:57:47.652Z",
+  "updatedAt": "2023-08-10T03:16:42.972Z",
+  "networkType": "ethereum",
   "devdoc": {
     "details": "A simple decentralized lottery smart contract.",
     "kind": "dev",
